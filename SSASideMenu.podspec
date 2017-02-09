@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = "Quick side menu"
 
-  s.homepage         = "https://github.com/PavelGerashchenko/SSASideMenu.git"
+  s.homepage         = "https://github.com/PavelGerashchenko/SSASideMenu"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Sebastian Andersen" => "SebastianAndersen@what.com" }
