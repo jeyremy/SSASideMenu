@@ -45,7 +45,7 @@ extension UIViewController {
     @objc  optional func sideMenuDidHideMenuViewController(_ sideMenu: SSASideMenu, menuViewController: UIViewController)
 }
 
-public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
+open class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     
     public  enum SSASideMenuPanDirection: Int {
         case edge = 0
@@ -588,7 +588,7 @@ public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK : ViewController life cycle
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         if iOS8 {
@@ -605,7 +605,7 @@ public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -786,7 +786,7 @@ public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK : View Controller Rotation handler
     
-    override public var shouldAutorotate: Bool {
+    override open var shouldAutorotate: Bool {
         
         if let cntViewController = contentViewController {
             
@@ -795,7 +795,7 @@ public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         return false
     }
     
-    override public func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+    override open func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         
         if visible {
             
@@ -836,7 +836,7 @@ public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // MARK : Status Bar Appearance Management
-    override public var preferredStatusBarStyle: UIStatusBarStyle{
+    override open var preferredStatusBarStyle: UIStatusBarStyle{
         var style: UIStatusBarStyle
         
         switch statusBarStyle {
@@ -855,7 +855,7 @@ public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         return style
     }
     
-    override public var prefersStatusBarHidden: Bool{
+    override open var prefersStatusBarHidden: Bool{
         var statusBarHidden: Bool
         
         switch statusBarStyle {
@@ -872,7 +872,7 @@ public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         return statusBarHidden
     }
     
-    override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+    override open var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
         
         var statusBarAnimation: UIStatusBarAnimation = .none
         
