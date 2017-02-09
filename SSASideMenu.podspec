@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SSASideMenu"
-  s.version          = "0.2.1"
+  s.version          = "0.1.1"
   s.summary          = "Side menu"
 
 # This description is used to generate tags and improve search results.
