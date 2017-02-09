@@ -47,19 +47,19 @@ extension UIViewController {
     @objc  optional func sideMenuDidHideMenuViewController(_ sideMenu: SSASideMenu, menuViewController: UIViewController)
 }
 
-class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
+public class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     
-    enum SSASideMenuPanDirection: Int {
+    public  enum SSASideMenuPanDirection: Int {
         case edge = 0
         case everyWhere = 1
     }
     
-    enum SSASideMenuType: Int {
+    public enum SSASideMenuType: Int {
         case scale = 0
         case slip = 1
     }
     
-    enum SSAStatusBarStyle: Int {
+    public enum SSAStatusBarStyle: Int {
         case hidden = 0
         case black = 1
         case light = 2
@@ -305,7 +305,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK : Initializers
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -590,7 +590,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK : ViewController life cycle
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         
         if iOS8 {
@@ -607,7 +607,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -788,7 +788,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK : View Controller Rotation handler
     
-    override var shouldAutorotate: Bool {
+    override public var shouldAutorotate: Bool {
         
         if let cntViewController = contentViewController {
             
@@ -797,7 +797,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         return false
     }
     
-    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+    override public func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         
         if visible {
             
@@ -838,7 +838,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // MARK : Status Bar Appearance Management
-    override var preferredStatusBarStyle: UIStatusBarStyle{
+    override public var preferredStatusBarStyle: UIStatusBarStyle{
         var style: UIStatusBarStyle
         
         switch statusBarStyle {
@@ -857,7 +857,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         return style
     }
     
-    override var prefersStatusBarHidden: Bool{
+    override public var prefersStatusBarHidden: Bool{
         var statusBarHidden: Bool
         
         switch statusBarStyle {
@@ -874,7 +874,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
         return statusBarHidden
     }
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+    override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
         
         var statusBarAnimation: UIStatusBarAnimation = .none
         
@@ -906,7 +906,7 @@ class SSASideMenu: UIViewController, UIGestureRecognizerDelegate {
     // MARK : UIGestureRecognizer Delegate (Private)
     
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         
         if interactivePopGestureRecognizerEnabled,
             let viewController = contentViewController as? UINavigationController
